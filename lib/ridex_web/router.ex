@@ -13,6 +13,12 @@ defmodule RidexWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", RidexWeb do
+    pipe_through :api
+
+    post "/authenticate", AuthenticationController, :authenticate
+  end
+
   scope "/", RidexWeb do
     pipe_through :browser
 

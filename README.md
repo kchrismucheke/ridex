@@ -6,7 +6,7 @@ Elixir/OTP is a really good platform whenever you want to build backend systems 
 
 Ridex is a simple prototype for a ride sharing application with Elixir and the Phoenix framework, using some of its real-time communication features like Channels and Presence. For the sake of simplicity, it's a basic web app, allowing users to check in and share their current location, and riders to request for a ride. The web app will contain a map with real-time positions of drivers operating in the area.
 
-## The Domain model
+### The Domain model
 
   This application is going to have users that can be either Drivers or Riders. For the sake of simplicity, I have used a common database schema, and assume that a user can be either a Driver or a Rider, but not both.
 
