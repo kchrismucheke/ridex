@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import Login from "./Login";
-import Map from "./Map";
+import React, { useState } from 'react'
 
-export default () => {
-  const [user, setUser] = useState();
+import Login from './Login'
+import Map from './Map'
 
-  const handleLogin = (user) => setUser(user);
+function App() {
+  const [user, setUser] = useState()
 
-  return user ? <Map user={user} /> : <Login onLogin={handleLogin} />;
-};
+  const handleLogin = user => setUser(user)
+
+  if (user) {
+    return <Map user={user} />
+  }
+
+  return (
+    <Login updateUser={handleLogin} />
+  )
+}
+
+export default App

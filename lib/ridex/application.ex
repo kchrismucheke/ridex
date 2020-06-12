@@ -14,9 +14,9 @@ defmodule Ridex.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Ridex.PubSub},
       # Start the Endpoint (http/https)
-      RidexWeb.Endpoint
-      # Start a worker by calling: Ridex.Worker.start_link(arg)
-      # {Ridex.Worker, arg}
+      RidexWeb.Endpoint,
+      # Phoenix Presence
+      RidexWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

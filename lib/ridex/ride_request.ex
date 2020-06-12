@@ -10,13 +10,6 @@ defmodule Ridex.RideRequest do
     timestamps()
   end
 
-  @doc false
-  def changeset(ride_request, attrs) do
-    ride_request
-    |> cast(attrs, [:lat, :lng])
-    |> validate_required([:lat, :lng])
-  end
-
   def create(rider, %{"lat" => lat, "lng" => lng}) do
     %Ridex.RideRequest{
       rider_id: rider.id,
@@ -24,5 +17,12 @@ defmodule Ridex.RideRequest do
       lng: lng
     }
     |> Ridex.Repo.insert()
+  end
+
+  @doc false
+  def changeset(ride_request, attrs) do
+    ride_request
+    |> cast(attrs, [:lat, :lng])
+    |> validate_required([:lat, :lng])
   end
 end

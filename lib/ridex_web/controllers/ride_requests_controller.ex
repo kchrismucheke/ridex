@@ -6,7 +6,7 @@ defmodule RidexWeb.RideRequestsController do
         %{
           "geohash" => geohash,
           "position" => position
-        } = params
+        } = _params
       ) do
     # Assuming we are authenticating user with a plug before and store it in conn.assigns
     rider = conn.assigns[:current_user]
@@ -20,7 +20,7 @@ defmodule RidexWeb.RideRequestsController do
 
         conn |> json(%{"request" => request})
 
-      {:error, reason} ->
+      {:error, _reason} ->
         conn |> json(%{"error" => "Unable to request a ride"})
     end
   end
